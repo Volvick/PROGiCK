@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+body {
+  /* background:#99D421 ; */
+  background: #ffffff;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column;
+  background-color: #e5e5e536;
+  padding: 10px 0;
+}
+nav>h1{
+    font-size: 2rem;
+}
+nav>span{
+    color: #61af27;
+}
+.name {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  width: 100vw;
+  place-items: center;
+}
+ul{
+    list-style: none;
+    display: grid;
+    width: 40vw;
+}
+.name a{
+    padding: 40px;
+    border: 1px solid;
+    background-color: #e8f1fa;
+    display: flex;
+    border: none;
+    margin: 10px;
+    border-radius: 8px;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    transition: background-color 200ms ease-in-out;
+}
+i{
+    font-weight: bold;
+    padding: 4px;
+    transition: all 200ms ease-in-out;
+
+}
+.right-section{
+    margin-bottom: 135px;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color;
+    transition-duration: 0.6s;
+    transition-timing-function: ease;
+}
+a:hover{
+    background-color: black;
+    color: white;
+    i{
+        background-color: #fff;
+        border-radius: 15%;
+        padding: 5px 10px;
+        color: black;
+    }
+}
+@media only screen and (max-width:992px){
+    .name {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        }
+        ul{
+            width: 90vw;
+        }
+        .right-section{
+            margin-bottom: 0px;
+        }
+}
+footer {
+    display: grid;
+    place-items: center;
+    background-color: #e5e5e536;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+  }
+  footer a{
+      text-decoration: none;
+      font-weight: 600;
+      color: #61af27;
+  }
