@@ -84,7 +84,7 @@ main {
 }
 .intro {
   padding: 0 4px;
-  border-left: 1px solid #61af27;
+  border-left: 1px solid #000000;
 }
 .btnCreate {
   margin: 40px 0 0 0;
@@ -137,9 +137,9 @@ footer a{
 }
 @media only screen and (max-width:375px){
     .innerSection > h1{
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     .innerSection > h1 > span {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 }
