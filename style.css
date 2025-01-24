@@ -13,8 +13,8 @@
 body {
   background: #ece7e2;
   overflow-x: hidden;
-  height: 100dvh;
-  width: 100dvw;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -106,23 +106,29 @@ section{
     width: 97%;
     margin-left: auto;
 }
-
+.para>h4{
+  font-weight: 600;
+  color: #4a7766;
+}
 .para>p{
     margin-left: 11px;
-}
-.para .contactBtn{
+    color: #2e2e2e;
+  }
+  .para .contactBtn{
     margin-left: 33px;
-}
-.para a{
+  }
+  .para a{
     text-decoration: none;
-    color: black;
+    color: #2e2e2e;
     font-weight: 500;
 }
 .para a:hover{
+  color: black;
     font-weight: 600;
 }
 .para>p>span{
     font-weight: 500;
+    color: #202020;
 }
 footer {
   display: grid;
