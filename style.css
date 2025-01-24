@@ -6,124 +6,126 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", serif;
+  transition: all 200ms ease-in-out;
 }
 
 /* Base Styles */
 body {
-  background: #ffffff;
+  background: #ece7e2;
   overflow-x: hidden;
-  height: 100vh;
-  width: 100%;
+  height: 100dvh;
+  width: 100dvw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-nav {
+.navBar {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-flow: column;
-  background-color: #e5e5e536;
+  background-color: #4a776619;
   padding: 10px 0;
+
 }
 
-nav > h1 {
-  font-size: 2rem;
+.navBar > h1 {
+  font-size: 24px;
 }
 
-nav > span {
-  color: #61af27;
+.navBar > span {
+  color: #4a7766;
 }
 
-.mainSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.secNav{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    background-color: #4a7766;
+    border-radius: 5px 5px 0 0 ;
+    color: #ece7e2;
+    margin-bottom: 20px;
+}
+.secNav>h1{
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.secNav>h1>sup{
+    font-weight: 400;
+    font-size: 8px;
+}
+.btn a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.btn button{
+    flex-grow: 1;
+    font-size: 15px;
+    color: #ece7e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a7766;
+    padding: 6px 0;
+    border-radius: 0 0 5px 5px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.btn button:hover{
+    background-color: #57937c;
+
+    .fa-arrow-right{
+        margin-left: 5px;
+    }
+}
+section{
+    width: 95dvw;
+    background-color: #fff;
+    border-radius: 8px;
+    border-left: 2px solid #4a7766;
+    border-right: 2px solid #4a7766;
+    box-shadow: 0 0 20px #0000002c;
+}
+.para{
+    display: flex;
+    flex-flow: column;
+    margin-top: 10px;
+    width: 97%;
+    margin-left: auto;
 }
 
-main {
-  height: 30vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 80px 0;
+.para>p{
+    margin-left: 11px;
 }
-
-.innerSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  background-color: #e8f1fa;
-  padding: 2rem;
-  border-radius: 8px;
+.para .contactBtn{
+    margin-left: 33px;
 }
-
-.innerSection > h1 {
-  font-size: 4rem;
+.para a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
 }
-
-.innerSection > h1 > span {
-  font-size: 4rem;
-  background-color: #000000;
-  color: white;
-  padding: 0 2rem;
+.para a:hover{
+    font-weight: 600;
 }
-
-.innerSection > .pagickDetails {
-  background-color: #fff;
-  border: 2px solid #61af27;
-  border-radius: 4px;
-  border-left: 8px solid #61af27;
-  margin: 30px 0 0 0;
-  padding: 2rem;
+.para>p>span{
+    font-weight: 500;
 }
-
-.pagickDetails p {
-  margin: 8px 0 0 0;
-}
-
-.pagickDetails .PAGiCK {
-  margin: 0px 0 -20px 0;
-  color: #61af27;
-  font-size: 1.5rem;
-  border-bottom: 1px solid;
-  font-weight: 600;
-}
-
-.pagickDetails .click {
-  font-weight: 600;
-}
-
-.intro {
-  padding: 0 4px;
-  border-left: 1px solid #000000;
-}
-
-.btnCreate {
-  margin: 40px 0 0 0;
-  background-color: #61af27;
-  outline: none;
-  border: none;
-  padding: 1rem 4rem;
-  font-size: 1.2rem;
-  font-weight: 500;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-  border: 2px solid transparent;
-}
-
-.btnCreate:hover {
-  background-color: #fff;
-  border: 2px solid black;
-}
-
 footer {
   display: grid;
   place-items: center;
-  background-color: #e5e5e536;
+  background-color: #4a776619;
   color: rgb(0, 0, 0);
   padding: 10px;
   text-align: center;
@@ -132,56 +134,5 @@ footer {
 footer a {
   text-decoration: none;
   font-weight: 600;
-  color: #61af27;
-}
-
-/* Responsive Breakpoints */
-
-/* For Screens Up to 768px */
-@media only screen and (max-width: 802px) {
-  main {
-    width: 80vw;
-  }
-
-  .innerSection {
-    padding: 2rem;
-  }
-
-  .innerSection > h1 {
-    font-size: 2rem;
-  }
-
-  .pagickDetails .PAGiCK {
-    font-size: 1.2rem;
-  }
-}
-
-/* For Screens Up to 445px */
-@media only screen and (max-width: 600px) {
-  .innerSection > h1 > span {
-    font-size: 3rem;
-  }
-  .innerSection > h1 {
-    font-size: 1.5rem;
-  }
-  
-  .innerSection > h1 > span {
-    font-size: 2.3rem;
-  }
-}
-
-@media only screen and (max-width: 410px) {
-  .innerSection > h1 {
-    font-size: 1rem;
-  }
-  
-  .innerSection > h1 > span {
-    font-size: 1.5rem;
-  }
-  .pagickDetails p{
-    font-size: 12px !important;
-  }
-  .PAGiCK{
-    font-size: 14px !important;
-  }
+  color: #4a7766;
 }
