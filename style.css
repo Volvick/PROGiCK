@@ -26,13 +26,15 @@ body {
   flex-flow: column;
   background-color: #4a776619;
   padding: 10px 0;
-
 }
 
 .navBar > h1 {
   font-size: 24px;
 }
-
+.navBar > h1>sup{
+  font-weight: 400;
+  font-size: 8px;
+}
 .navBar > span {
   color: #4a7766;
 }
@@ -90,7 +92,7 @@ main{
     }
 }
 section{
-    width: 95dvw;
+    width: 95vw;
     background-color: #fff;
     border-radius: 8px;
     border-left: 2px solid #4a7766;
