@@ -112,6 +112,7 @@ footer a {
     cursor: pointer;
     color: #4a7766;
     border-radius: 4px;
+    padding: 6px 0;
 }
 .btn a>button:hover{
     background-color: #4a7766;
