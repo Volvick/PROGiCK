@@ -52,10 +52,9 @@ body {
   border: 1px solid #c8c8c8;
   flex-flow: column;
   flex-wrap: wrap;
-  width: 500px;
+  width: 85vw;
   border-radius: 8px;
   margin: 0;
-  /* box-shadow: 0 0 10px #00000031; */
 }
 .box{
   width: 90%;
