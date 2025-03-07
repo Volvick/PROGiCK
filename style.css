@@ -169,7 +169,7 @@ i{
 @media only screen and (max-width:825px) {
 .mainSection{
   width: 90vw;
-}
+  }}
 @media only screen and (max-width:720px) {
   .borderText p{
     font-size: 10px;
@@ -187,9 +187,8 @@ i{
   .insta,.gmail{
     margin: 0 0 10px 0;
   }
-  
 }
-@media only screen and (min-width:348px) {
+@media only screen and (min-width:352px) {
   .topText{
     font-size: 14px;
   }
