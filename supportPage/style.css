@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&display=swap");
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    transition: all 200ms ease-in-out;
+}
+
+/* Base Styles */
+body {
+    background: #ece7e2;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column;
+    background-color: #4a776619;
+    padding: 10px 0;
+}
+
+.navBar>h1 {
+    font-size: 24px;
+}
+
+.navBar>h1>sup {
+    font-weight: 400;
+    font-size: 8px;
+}
+
+.navBar>span {
+    color: #4a7766;
+}
+
+footer {
+    display: grid;
+    place-items: center;
+    background-color: #4a776619;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #4a7766;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.btn>button,
+.card>button {
+    padding: 10px 20px;
+    color: #000;
+    font-size: 12px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #c8c8c8;
+}
+
+p {
+    color: #414141;
+}
+
+.btn>button:hover,
+.card>button:hover {
+    border: 1px solid #4a7766;
+    background: #4a7766;
+    color: #fff;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 18px 20px;
+    width: 800px;
+    border-radius: 10px;
+}
+
+.card>button {
+    margin: 10px 0;
+}
+
+.card.halfBody {
+    margin-top: 20px;
+}
+
+.card.center {
+    box-shadow: none;
+}
+
+.btn {
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.sharePopup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    top: 5%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+.sharePopup.show{
+    opacity: 1;
+    pointer-events: auto;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+}
+.fa-xmark{
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    margin-left: 90%;
+    font-size: 16px;
+    padding: 3px 8px;
+    margin-top:-10px;
+}
+.fa-xmark:hover{
+    color: #ece7e2;
+    background-color: #4a7766;
+    border-radius: 15%;
+}
+.sharePopupContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.share-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+.share-buttons>button{
+    width: 100%;
+    border: 1px solid #c8c8c8;
+    padding: 10px 10px  ;
+    background: transparent;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 12px;
+}
+button>i{
+    margin-right: 5px;
+}
+.share-buttons>button:hover{
+    background: #4a7766;
+    color: #fff;
+    cursor: pointer;
+}
+.sharePopupContent>h1{
+    font-size: 20px;
+    font-weight: 600;
+}
+.sharePopupContent>p{
+    font-size: 12px;
+    font-weight: 400;
+}
+.sharePopupContent>p>a{
+    text-decoration: none;
+    color: #4a7766;
+    font-weight: 600;
+}
+@media only screen and (max-width: 830px) {
+
+    .halfBody,
+    .card {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+
+    .halfBody,
+    .card {
+        h1 {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        width: 400px;
+    }
+
+    .btn {
+        flex-direction: column;
+    }
+
+    .btn>button {
+        display: flex;
+        margin: 4px 0;
+        width: 100%;
+        flex-grow: 1;
+        flex-direction: row;
+        font-size: 10px;
+    }
+
+    .btn {
+        margin-top: 4px;
+        gap: 0px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+
+    .halfBody,
+    .card {
+        h1 {
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 8px;
+        }
+
+        width: 280px;
+    }
+
+    .btn>button,
+    .card>button {
+        display: flex;
+        width: 100%;
+        flex-grow: 1;
+        flex-direction: row;
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    .btn {
+        margin-top: 4px;
+        gap: 0px;
+    }
+
+    .card>h1 {
+        font-size: 18px !important;
+    }
+
+
+}
