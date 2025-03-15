@@ -77,7 +77,7 @@ footer a {
     width: 100%;
 }
 .btn>button,
-.card>button {
+.card>button,.feed>button {
     padding: 8px 20px;
     color: #252525;
     font-size: 12px;
@@ -96,9 +96,13 @@ footer a {
 p {
     color: #414141;
 }
-
+.feed 
+{
+    text-decoration: none;
+    margin-top: 10px;
+}
 .btn>button:hover,
-.card>button:hover {
+.card>button:hover,.feed>button:hover{
     border: 1px solid #4a7766;
     background: #4a7766;
     color: #fff;
@@ -216,8 +220,10 @@ p {
     background-color: #4a7766;
     cursor: pointer;
     color: #fff;
+    border: 1px solid transparent;
 
 }
+
 .share-buttons>button,.money>button,.money .contri>button{
     width: 100%;
     padding: 10px 10px  ;
