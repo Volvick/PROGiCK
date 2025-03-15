@@ -76,11 +76,10 @@ footer a {
     flex-grow: 1;
     width: 100%;
 }
-
 .btn>button,
 .card>button {
-    padding: 10px 20px;
-    color: #000;
+    padding: 8px 20px;
+    color: #252525;
     font-size: 12px;
     background: #f7f7f7;
     border-radius: 5px;
@@ -139,8 +138,7 @@ p {
 }
 
 .btn {
-    margin-top: 10px;
-    gap: 10px;
+    margin-top: 10px !important;
 }
 
 .sharePopup{
@@ -242,7 +240,10 @@ button>i{
 }
 
 @media only screen and (max-width: 530px) {
-
+    .btn>button,
+    .card>button{
+        width: 100%;
+    }
     .halfBody,
     .card {
         h1 {
@@ -256,19 +257,17 @@ button>i{
         width: 400px;
     }
 
-    .btn {
-        flex-direction: column;
-    }
 
     .btn>button {
         display: flex;
         margin: 4px 0;
         width: 100%;
-        flex-grow: 1;
         flex-direction: row;
         font-size: 10px;
     }
-
+    .btn>button.donate{
+        margin-right: 10px;
+    }
     .btn {
         margin-top: 4px;
         gap: 0px;

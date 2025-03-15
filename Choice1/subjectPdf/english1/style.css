@@ -91,24 +91,23 @@ body {
   
 }
 .mainField button{
+  margin-top: 20px;
   padding: 6px 0;
-  /* background-color: #4a776614; */
-  outline: none;
-  background: transparent;
-  border: none;
-  margin-top:24px;
-  font-size: 17px;
-  border-radius: 4px;
-  color: #4a7766;
-  border: 1px solid #c8c8c8;
-  background-color: #f5f5f5;
-}
-.mainField button:hover{
-  border: 1px solid #4a7766;
-  background-color: #4a7766;
-  color: #ece7e2;
+  color: #252525;
+  font-size: 16px;
+  background: #f7f7f7;
+  border-radius: 5px;
   cursor: pointer;
+  font-weight: 500;
+  border: 1px solid #c8c8c8;
 }
+
+.mainField button:hover {
+  border: 1px solid #4a7766;
+  background: #4a7766;
+  color: #fff;
+}
+
 header{
   display: flex;
   /* background-color: #4a776662; */

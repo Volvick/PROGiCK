@@ -52,22 +52,37 @@ ul{
     display: grid;
     width: 40vw;
 }
-.name a{
-    padding: 30px ;
-    display: flex;
-    border: none;
-    margin: 10px;
-    border-radius: 8px;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    background-color:#fff ;
-    font-size: 24px;
-  /* border: 1px solid #c8c8c8; */
-   box-shadow: 2px  2px 10px  #ebe3dd;
+.name a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  margin: 10px;
+  padding: 30px;
+  color: #252525;
+  font-size: 20px;
+  background: #f7f7f7;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 10px;
+  align-items: center;
+  border: 1px solid #c8c8c8;
+  transition: background-color 200ms ease-in-out;
 
-    transition: background-color 200ms ease-in-out;
+}
+
+.name a:hover {
+  border: 1px solid #4a7766;
+  background: #4a7766;
+  color: #fff;
+
+  i {
+    background-color: #fff;
+    border-radius: 15%;
+    padding: 5px 10px;
+    color: #252525;
+  }
 }
 .navBar > h1>sup{
     font-weight: 400;
@@ -80,7 +95,7 @@ i{
 
 }
 .right-section{
-    margin-bottom: 135px;
+          margin-bottom: 119px;
 }
 li{
     display: flex;
@@ -90,17 +105,7 @@ li{
     transition-duration: 0.6s;
     transition-timing-function: ease;
 }
-.name a:hover{
-    background-color: black;
-    color: white;
-    /* border: 1px solid transparent; */
-    i{
-        background-color: #fff;
-        border-radius: 15%;
-        padding: 5px 10px;
-        color: black;
-    }
-}
+
 @media only screen and (max-width:992px){
     .name {
         margin-top: 30px;
