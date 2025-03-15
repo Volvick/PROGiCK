@@ -196,6 +196,9 @@ i {
   .mainSection {
     width: 90vw;
   }
+  .borderText{
+    width: 115% !important;
+  }
 }
 
 @media only screen and (max-width:720px) {
@@ -208,13 +211,19 @@ i {
     font-size: 12px;
     margin-right: 4px;
   }
+  .borderText{
+    width: 115% !important;
+  }
 }
 
 @media only screen and (max-width:400px) {
+  .borderText{
+    width: 115% !important;
+  }
   .social {
     flex-flow: column;
   }
-
+  
   .insta,
   .gmail {
     margin: 0 0 10px 0;
@@ -225,7 +234,11 @@ i {
 }
 
 @media only screen and (min-width:352px) {
+  .borderText{
+    width: 105% !important;
+  }
   .topText {
     font-size: 14px;
   }
+  
 }

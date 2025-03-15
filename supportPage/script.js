@@ -10,6 +10,15 @@ function toggleSharePopup() {
         popup.classList.add("show");
     }
 }
+function toggleSharePopupMoney() {
+    const popup = document.getElementById("share-popup-money");
+    
+    if (popup.classList.contains("show")) {
+        popup.classList.remove("show");
+    } else {
+        popup.classList.add("show");
+    }
+}
 
 function shareOnTwitter() {
     window.open(`https://twitter.com/intent/tweet?url=${pageUrl}&text=${shareText}`, '_blank', 'width=600,height=400');
@@ -32,6 +41,15 @@ function copyForInstagram() {
 
     navigator.clipboard.writeText(textToCopy).then(() => {
         alert("Message copied! Paste it on Instagram.");
+    }).catch(err => {
+        console.error("Failed to copy: ", err);
+    });
+}
+function copyUPI() {
+    const textToCopy = `volvick5050@okhdfcbank`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert("UPI ID copied!");
     }).catch(err => {
         console.error("Failed to copy: ", err);
     });
