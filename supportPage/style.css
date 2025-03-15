@@ -199,7 +199,6 @@ p {
 }
 .share-buttons>button{
     width: 100%;
-    border: 1px solid #c8c8c8;
     padding: 10px 10px  ;
     background: transparent;
     margin: 5px 0;
@@ -209,11 +208,14 @@ p {
     align-items: center;
     border-radius: 5px;
     font-size: 12px;
+    border: 1px solid #c8c8c8;
+    transition: background 0.3s ease-in-out;
 }
 button>i{
     margin-right: 5px;
 }
 .share-buttons>button:hover{
+    border: 1px solid transparent;
     background: #4a7766;
     color: #fff;
     cursor: pointer;
