@@ -236,7 +236,20 @@ button>i{
     color: #fff;
     cursor: pointer;
 }
+.share-buttons>button:active,.money .contri>button:active{
+    border: 1px solid transparent;
+    background: #4a7766;
+    color: #fff;
+    cursor: pointer;
+}
 .copy:hover{
+    border: 1px solid transparent;
+    background: #4a7766;
+    color: #fff;
+    cursor: pointer;
+
+}
+.copy:active{
     border: 1px solid transparent;
     background: #4a7766;
     color: #fff;
