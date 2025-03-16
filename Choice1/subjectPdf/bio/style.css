@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .navBar {
   display: flex;
   justify-content: space-evenly;
@@ -28,27 +29,31 @@ body {
   padding: 10px 0;
 }
 
-.navBar > h1 {
+.navBar>h1 {
   font-size: 24px;
 }
-.navBar > h1 > sup {
+
+.navBar>h1>sup {
   font-weight: 400;
   font-size: 8px;
 }
-.navBar > span {
+
+.navBar>span {
   color: #4a7766;
 }
-.centerForm{
+
+.centerForm {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
 }
-.form{
+
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff; 
+  background-color: #fff;
   border: 1px solid #c8c8c8;
   flex-flow: column;
   flex-wrap: wrap;
@@ -56,12 +61,14 @@ body {
   border-radius: 8px;
   margin: 0;
 }
-.box{
+
+.box {
   width: 90%;
   display: flex;
   flex-grow: 1;
 }
-.mainField{
+
+.mainField {
   padding: 20px 0px 30px 0;
   display: flex;
   flex-flow: column;
@@ -69,27 +76,31 @@ body {
   width: 100%;
   justify-content: center;
 }
-.mainField label{
+
+.mainField label {
   color: #000;
   margin: 4px 0 -1px 0;
   font-size: 14px;
 }
-.mainField input{
+
+.mainField input {
   border: none;
   outline: none;
   padding: 4px 0;
-  border-radius:2px;
+  border-radius: 2px;
   font-size: 14px;
-  background:transparent ;
+  background: transparent;
   border-bottom: 1px solid #c8c8c8;
   color: #4a7766;
-  
+
 }
-.mainField input:focus{
+
+.mainField input:focus {
   border-bottom: 1px solid #4a7766;
-  
+
 }
-.mainField button{
+
+.mainField button {
   margin-top: 20px;
   padding: 6px 0;
   color: #252525;
@@ -107,7 +118,7 @@ body {
   color: #fff;
 }
 
-header{
+header {
   display: flex;
   /* background-color: #4a776662; */
   border-radius: 8px 8px 0 0;
@@ -117,7 +128,8 @@ header{
   justify-content: space-between;
   align-items: center;
 }
-header .logo{
+
+header .logo {
   margin-left: 10px;
   letter-spacing: 1px;
   font-weight: 500;
@@ -126,13 +138,15 @@ header .logo{
   padding: 0px 4px;
   background-color: #4a77661a;
 }
-header>img{
-    width: 30px;
-    margin-right: 10px;
-    border-radius: 50%;
-    padding: 4px;
-    height: 30px;
+
+header>img {
+  width: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  padding: 4px;
+  height: 30px;
 }
+
 footer {
   display: grid;
   place-items: center;

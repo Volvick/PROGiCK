@@ -5,83 +5,66 @@ const userRoll = document.getElementById("roll");
 const userAdmno = document.getElementById("admno");
 const userSession = document.getElementById("session");
 const userSubmit = document.getElementById("submitted");
+const loadingBox = document.getElementById("loadingBox"); // Added loading box
 
 const generatePDF = async (name, classs, roll, admno, submitted, session) => {
-  const { PDFDocument, rgb,degrees } = PDFLib;
+  loadingBox.style.display = "block"; // Show loading box
 
-  const capitalize = (str, lower = false) =>
-    (lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
-      match.toUpperCase()
-    );
+  const { PDFDocument, rgb, degrees } = PDFLib;
 
-  const exBytes = await fetch("./cert.pdf").then((res) => {
-    return res.arrayBuffer();
-  });
-  const exFont = await fetch("./Poppins-Regular.ttf").then((res) => {
-    return res.arrayBuffer();
-  });
+  const exBytes = await fetch("./cert.pdf").then((res) => res.arrayBuffer());
+  const exFont = await fetch("./Poppins-Regular.ttf").then((res) => res.arrayBuffer());
+
   const pdfDoc = await PDFDocument.load(exBytes);
   pdfDoc.registerFontkit(fontkit);
   const myFont = await pdfDoc.embedFont(exFont);
   const pages = pdfDoc.getPages();
   const firstPg = pages[0];
-  firstPg.drawText(name, {
-    x: 94,
-     y: 256,
-     size: 18,
-     font: myFont,
-     color: rgb(0.078, 0.078, 0.078),
-   });
-   firstPg.drawText(classs, {
-     x: 94,
-     y: 198,
-     size: 18,
-     font: myFont,
-     color: rgb(0.078, 0.078, 0.078),
-   });
-   firstPg.drawText(roll, {
-    x: 100,
-     y: 134,
-     size: 18,
-     font: myFont,
-     color: rgb(0.078, 0.078, 0.078),
-   });
-   firstPg.drawText(admno, {
-     x: 102,
-     y: 63,
-     size: 18,
-     font: myFont,
-     color: rgb(0.078, 0.078, 0.078),
-   });
- 
-   firstPg.drawText(submitted, {
-    //session
+
+  // Drawing text onto the PDF
+  firstPg.drawText(name, { x: 94, y: 256, size: 18, font: myFont, color: rgb(0.078, 0.078, 0.078) });
+  firstPg.drawText(classs, { x: 94, y: 198, size: 18, font: myFont, color: rgb(0.078, 0.078, 0.078) });
+  firstPg.drawText(roll, { x: 100, y: 134, size: 18, font: myFont, color: rgb(0.078, 0.078, 0.078) });
+  firstPg.drawText(admno, { x: 102, y: 63, size: 18, font: myFont, color: rgb(0.078, 0.078, 0.078) });
+  firstPg.drawText(session, {
     x: 54,
-   y: 470,
-   size: 24,
-   font: myFont,
-   color: rgb(0.05, 0.05, 0.05),
-   rotate: degrees(90),
- });
-   firstPg.drawText(session, {
-     //submitted
-       x: 344,
-       y: 114,
-       size: 15,
-       font: myFont,
-       color: rgb(0.05, 0.05, 0.05),
+    y: 470,
+    size: 24,
+    font: myFont,
+    color: rgb(0.05, 0.05, 0.05),
+    rotate: degrees(90),
   });
-  const uri = await pdfDoc.saveAsBase64({ dataUri: true });
-  saveAs(uri, "PAGiCK.pdf", { autoBom: true });
-  // document.querySelector("#mypdf").src = uri;
+  firstPg.drawText(submitted, {
+    x: 344,
+    y: 114,
+    size: 15,
+    font: myFont,
+    color: rgb(0.05, 0.05, 0.05),
+  });
+
+  // Save the PDF
+  const pdfBytes = await pdfDoc.save();
+
+  // Generate date-time string
+  const now = new Date();
+  const timestamp = now.toISOString().replace(/T/, "_").replace(/:/g, "-").split(".")[0]; // Format: YYYY-MM-DD_HH-MM-SS
+
+  // Create file and download
+  const file = new Blob([pdfBytes], { type: "application/pdf" });
+  const filename = `PAGiCK_${timestamp}.pdf`;
+  saveAs(file, filename);
+
+  loadingBox.style.display = "none"; // Hide loading box after PDF is generated
 };
+
+// Capitalization function
 const capitalize = (str, lower = false) =>
   (lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
     match.toUpperCase()
   );
-submitBtn.addEventListener("click", () => {
-  // const val = capitalize(userName.value);
 
+// Button Click Event Listener
+submitBtn.addEventListener("click", () => {
   const valName = capitalize(userName.value);
   const valClass = capitalize(userClasss.value);
   const valRoll = userRoll.value;
@@ -89,22 +72,17 @@ submitBtn.addEventListener("click", () => {
   const valSubmitted = capitalize(userSubmit.value);
   const valSession = userSession.value;
 
-  //check if the text is empty or not
-  if (valName.trim() !== "" && userName.checkValidity()) {
-    // console.log(val);
-    generatePDF(valName, valClass, valRoll, valAdmno, valSession, valSubmitted);
-  } else if (valClass.trim() !== "" && userClasss.checkValidity()) {
-    generatePDF(valName, valClass, valRoll, valAdmno, valSession, valSubmitted);
-  } else if (valRoll.trim() !== "" && userRoll.checkValidity()) {
-    generatePDF(valName, valClass, valRoll, valAdmno, valSession, valSubmitted);
-  } else if (valAdmno.trim() !== "" && userAdmno.checkValidity()) {
-    generatePDF(valName, valClass, valRoll, valAdmno, valSession, valSubmitted);
+  // Ensure all fields are filled before generating the PDF
+  if (
+    valName.trim() !== "" &&
+    valClass.trim() !== "" &&
+    valRoll.trim() !== "" &&
+    valAdmno.trim() !== "" &&
+    valSubmitted.trim() !== "" &&
+    valSession.trim() !== ""
+  ) {
+    generatePDF(valName, valClass, valRoll, valAdmno, valSubmitted, valSession);
   } else {
-    userName.reportValidity();
+    alert("Please fill in all fields before downloading the PDF.");
   }
-  var file = new File([pdfBytes], "PAGiCK.pdf", {
-    type: "application/pdf;charset=utf-8",
-  });
-  saveAs(file);
 });
-
