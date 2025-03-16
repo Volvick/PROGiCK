@@ -76,15 +76,39 @@ footer a {
     flex-grow: 1;
     width: 100%;
 }
-.btn>button,
-.card>button,.feed>button {
-    padding: 8px 20px;
+.feed{
+    padding: 6px 20px;
     color: #252525;
     font-size: 12px;
     background: #f7f7f7;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #c8c8c8;
+    cursor: pointer;
+}
+.feed>button{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+}
+.btn>button,
+.card>button {
+    font-weight: 500;
+    padding: 8px 20px;
+    color: #252525;
+    font-size: 12px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    cursor: pointer;
     margin-left: 10px;
     display: flex;
     flex-direction: row;
@@ -102,12 +126,19 @@ p {
     margin-top: 10px;
 }
 .btn>button:hover,
-.card>button:hover,.feed>button:hover{
+.card>button:hover{
     border: 1px solid #4a7766;
     background: #4a7766;
     color: #fff;
 }
-
+.feed:hover{
+    border: 1px solid #4a7766;
+    background: #4a7766;
+    color: #fff;
+    .feedback{
+        color: #fff !important;
+}
+}
 .cards {
     display: flex;
     justify-content: center;
@@ -340,13 +371,13 @@ button>i{
 
     .halfBody,
     .card {
-        width: 500px;
+        width: 95vw;
     }
 }
 
 @media only screen and (max-width: 530px) {
     .btn>button,
-    .card>button{
+    .card>button,.feed,.feed>button{
         width: 100%;
     }
     .halfBody,
@@ -358,8 +389,6 @@ button>i{
         p {
             font-size: 12px;
         }
-
-        width: 400px;
     }
 
 
@@ -390,8 +419,6 @@ button>i{
         p {
             font-size: 8px;
         }
-
-        width: 280px;
     }
 
     .btn>button,
